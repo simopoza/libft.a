@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mannahri <mannahri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 09:02:44 by mannahri          #+#    #+#             */
-/*   Updated: 2021/11/11 18:19:27 by mannahri         ###   ########.fr       */
+/*   Created: 2021/11/13 18:41:50 by mannahri          #+#    #+#             */
+/*   Updated: 2021/11/15 20:32:41 by mannahri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include <fcntl.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	long int	nb;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n - 1)
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	nb = n;
+	if (nb < 0)
+	{
+		nb *= (-1);
+		ft_putchar_fd('-', fd);
+	}
+	if (nb > 9)
+	{
+		ft_putnbr_fd((nb / 10), fd);
+		ft_putnbr_fd((nb % 10), fd);
+	}
+	else
+		ft_putchar_fd(nb + 48, fd);
 }
 
 /*int main()
 {
-    char* K = "abdo";
-    char* H = "abdo";
-    printf("mine : %d\n", ft_strncmp(K, H, 0));
-    printf("theirs : %d", strncmp(K, H, 0));
-    return(0);
+    int fd;
+    fd = open("putnbr.txt" ,O_RDWR);
+    ft_putnbr_fd(5000, fd);
 }*/

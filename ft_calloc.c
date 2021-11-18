@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mannahri <mannahri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 09:02:44 by mannahri          #+#    #+#             */
-/*   Updated: 2021/11/11 18:19:27 by mannahri         ###   ########.fr       */
+/*   Created: 2021/11/08 15:43:59 by mannahri          #+#    #+#             */
+/*   Updated: 2021/11/16 01:34:26 by mannahri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
+	char	*k;
 
-	i = 0;
-	if (n == 0)
+	k = malloc(count * size);
+	if (k == 0)
 		return (0);
-	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n - 1)
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	ft_bzero(k, count * size);
+	return (k);
 }
 
 /*int main()
 {
-    char* K = "abdo";
-    char* H = "abdo";
-    printf("mine : %d\n", ft_strncmp(K, H, 0));
-    printf("theirs : %d", strncmp(K, H, 0));
+	int	i;
+	i = 2;
+	int c = 3;
+	printf("%s",ft_calloc(i, c));
+	printf("%s",calloc(i, c));
+}*/
+/*int main()
+{
+    printf("%s", ft_calloc(2, 3));
+    //printf("%s")
     return(0);
 }*/

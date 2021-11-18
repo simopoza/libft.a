@@ -6,11 +6,14 @@
 /*   By: mannahri <mannahri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:58:10 by mannahri          #+#    #+#             */
-/*   Updated: 2021/11/02 15:15:19 by mannahri         ###   ########.fr       */
+/*   Updated: 2021/11/08 11:22:28 by mannahri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    return(c >= '0' && c <= '9');
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }

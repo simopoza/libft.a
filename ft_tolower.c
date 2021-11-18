@@ -6,14 +6,14 @@
 /*   By: mannahri <mannahri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 08:27:35 by mannahri          #+#    #+#             */
-/*   Updated: 2021/11/06 21:31:29 by mannahri         ###   ########.fr       */
+/*   Updated: 2021/11/08 12:39:12 by mannahri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 65 && c <= 90)
-        return(c + 32);
-    else
-        return(c);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	else
+		return (c);
 }

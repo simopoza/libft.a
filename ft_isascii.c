@@ -6,11 +6,14 @@
 /*   By: mannahri <mannahri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:32:31 by mannahri          #+#    #+#             */
-/*   Updated: 2021/11/03 08:40:08 by mannahri         ###   ########.fr       */
+/*   Updated: 2021/11/08 11:20:43 by mannahri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    return(c >= 0 && c <= 127);
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }

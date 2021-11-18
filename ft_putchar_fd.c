@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mannahri <mannahri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 09:02:44 by mannahri          #+#    #+#             */
-/*   Updated: 2021/11/11 18:19:27 by mannahri         ###   ########.fr       */
+/*   Created: 2021/11/13 16:33:56 by mannahri          #+#    #+#             */
+/*   Updated: 2021/11/17 22:45:29 by mannahri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include <fcntl.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n - 1)
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	write(fd, &c, 1);
 }
+/*int main()
+{
+    int fd;
+    fd = open("file.txt",O_WRONLY);
+    ft_putchar_fd('k', fd);
+}*/
 
 /*int main()
 {
-    char* K = "abdo";
-    char* H = "abdo";
-    printf("mine : %d\n", ft_strncmp(K, H, 0));
-    printf("theirs : %d", strncmp(K, H, 0));
-    return(0);
+	char c = 'l';
+	int fd = 5;
+	ft_putchar_fd(c,fd);
+	return (0);
 }*/

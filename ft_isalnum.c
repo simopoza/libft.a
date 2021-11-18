@@ -6,11 +6,16 @@
 /*   By: mannahri <mannahri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:17:19 by mannahri          #+#    #+#             */
-/*   Updated: 2021/11/02 15:28:55 by mannahri         ###   ########.fr       */
+/*   Updated: 2021/11/16 01:35:22 by mannahri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    return((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	if ((c >= 48 && c <= 57)
+		|| (c >= 65 && c <= 90)
+		|| (c >= 97 && c <= 122))
+		return (1);
+	else
+		return (0);
 }

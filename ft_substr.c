@@ -1,34 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mannahri <mannahri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 09:02:44 by mannahri          #+#    #+#             */
-/*   Updated: 2021/11/11 18:19:27 by mannahri         ###   ########.fr       */
+/*   Created: 2021/11/11 16:09:27 by mannahri          #+#    #+#             */
+/*   Updated: 2021/11/11 21:27:33 by mannahri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	char			*str;
+	unsigned int	i;
+	unsigned int	j;
 
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		len = 0;
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n - 1)
+	while (i < len && s[i])
 		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	str = malloc(i + 1);
+	if (!str)
+		return (NULL);
+	j = 0;
+	while (j < i)
+	{
+		str[j++] = s[start++];
+	}
+	str[j] = '\0';
+	return (str);
 }
 
 /*int main()
 {
-    char* K = "abdo";
-    char* H = "abdo";
-    printf("mine : %d\n", ft_strncmp(K, H, 0));
-    printf("theirs : %d", strncmp(K, H, 0));
-    return(0);
+	char k[] = "This is my time ok";
+	printf("%s", ft_substr(k, 5, 2));
+	return(0);
 }*/

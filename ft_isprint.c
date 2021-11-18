@@ -6,11 +6,14 @@
 /*   By: mannahri <mannahri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:09:43 by mannahri          #+#    #+#             */
-/*   Updated: 2021/11/02 16:14:44 by mannahri         ###   ########.fr       */
+/*   Updated: 2021/11/08 11:24:40 by mannahri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    return(c >= 32 && c <= 126);
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }
